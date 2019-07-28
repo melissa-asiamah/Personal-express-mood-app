@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mood App</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <script src="https://kit.fontawesome.com/14935d9727.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Keep Track of your daily mood</h1>
+  <h2>Choose your Mood:</h2>
+
+
+  <h3>Messages</h3>
+  <ul class="messages">
+  <% for(var i=0; i<messages.length; i++) {%>
+    <li class="message">
+      <span class="happyToday"><%= messages[i].mood1 %></span>
+      <span class= "sadToday"><%= messages[i].mood2 %></span>
+      <span class "okayToday"><%= messages[i].mood3 %></span>
+      <span class "angryToday"><%= messages[i].mood4 %></span>
+      <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+      <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+    </li>
+  <% } %>
+  </ul>
+
+  <div class="happies"></div>
+  <div class="sads"></div>
+  <div class="okays"></div>
+  <div class="angrys"></div>
+
+  <h2>Add a message</h2>
+
+  <form action="/moods" method="POST"></form>
+    <button type="submit" name="mood1">Happy</button>
+    <button type="submit" name="mood2">Sad</button>
+    <button type="submit" name="mood3">Okay</button>
+    <button type="submit" name="mood4">Angry</button>
+  </form>
+
+  <script src="main.js"></script>
+
+</body>
+</html>

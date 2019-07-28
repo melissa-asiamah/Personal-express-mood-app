@@ -1,0 +1,16 @@
+.happyToday {
+  at: left;
+}
+
+
+body {
+  background-image:url(gradient-background.jpg);
+  background-size: 100%;
+}
+
+.edit {
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  background-color: white;
+
+}
