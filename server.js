@@ -31,9 +31,8 @@ app.get('/', (req, res) => {
   })
 })
 
-app.post('/moods', (req, res) => {
-  db.collection('posts').save({name: mood1, name: req.body.mood2, name:
-  req.body.mood3, name: req.body.mood4}, (err, result) => {
+app.post('/mood', (req, res) => {
+  db.collection('posts').save({name: req.body.name, color: "black"}, (err, result) => {
     if (err) return console.log(err)
     console.log('saved to database')
     res.redirect('/')
@@ -46,14 +45,11 @@ app.post('/moods', (req, res) => {
 //======================================================
 
 
-app.put('/mood1', (req, res) => {
+app.put('/moodc', (req, res) => {
   db.collection('posts')
-  .findOneAndUpdate({mood1: req.body.mood1, mood2: req.body.mood2, mood3: req.body.mood3, mood4: req.body.mood4}, {
+  .findOneAndUpdate({name: req.body.name}, {
     $set: {
-      mood1: mood1,
-      mood2: mood2,
-      mood3: mood3,
-      mood4: mood4
+      color: 'red'
     }
   }, {
     sort: {_id: -1}, //searches top to bottom

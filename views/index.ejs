@@ -16,29 +16,22 @@
   <ul class="messages">
   <% for(var i=0; i<messages.length; i++) {%>
     <li class="message">
-      <span class="happyToday"><%= messages[i].mood1 %></span>
-      <span class= "sadToday"><%= messages[i].mood2 %></span>
-      <span class "okayToday"><%= messages[i].mood3 %></span>
-      <span class "angryToday"><%= messages[i].mood4 %></span>
+      <span style="color:<%= messages[i].color %>"><%= messages[i].name %></span>
       <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
       <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+      <span><button class="moodColor">Change Color</button></span>
     </li>
   <% } %>
   </ul>
 
-  <div class="happies"></div>
-  <div class="sads"></div>
-  <div class="okays"></div>
-  <div class="angrys"></div>
-
   <h2>Add a message</h2>
 
-  <form action="/moods" method="POST"></form>
-    <button type="submit" name="mood1">Happy</button>
-    <button type="submit" name="mood2">Sad</button>
-    <button type="submit" name="mood3">Okay</button>
-    <button type="submit" name="mood4">Angry</button>
+  <form action="/mood" method="POST">
+  <input type="text" name="name">
+  <button type="submit">Enter your mood</button>
   </form>
+
+
 
   <script src="main.js"></script>
 
